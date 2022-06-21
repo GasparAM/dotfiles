@@ -44,7 +44,7 @@ ex ()
 
 #custom aliases
 alias la="ls -lah --color=auto"
-
+alias pac="sudo pacman"
 
 #colorscripts
 colorscript -r
@@ -54,3 +54,4 @@ colorscript -r
 
 export PATH=$PATH:/home/gaspar/.spicetify
 alias gitdot='/usr/bin/git --git-dir=/home/gaspar/dotfiles/ --work-tree=/home/gaspar'
+alias vim=nvim
