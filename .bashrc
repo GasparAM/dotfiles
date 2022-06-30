@@ -24,7 +24,7 @@ ex ()
       *.tar.bz2)   tar xjvf $1   ;;
       *.tar.gz)    tar xzvf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar xv $1   ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xvf $1    ;;
       *.tbz2)      tar xjvf $1   ;;
