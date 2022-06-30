@@ -45,6 +45,7 @@ ex ()
 #custom aliases
 alias la="ls -lah --color=auto"
 alias pac="sudo pacman"
+alias xcp="xclip -selection clipboard"
 
 #colorscripts
 colorscript -r
