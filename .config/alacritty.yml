@@ -118,7 +118,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: Mononoki Nerd Font
-    family: Alma Mono    
+    family: JetBrainsMono Nerd Font    
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -191,10 +191,10 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-    #background: '#1d1f21'
+  primary:
+    background: '#200d29' #'#1d1f21'
     #foreground: '#c5c8c6'
 
     # Bright and dim foreground colors

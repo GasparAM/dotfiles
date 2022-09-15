@@ -329,6 +329,7 @@ globalkeys = gears.table.join(
 clientkeys = gears.table.join(
     --awful.key({}, "XF86AudioRaiseVolume",  function ()    awful.util.spawn("pactl set-sink-volume 0 +2%", false) end),
     --awful.key({}, "XF86AudioLowerVolume",  function ()    awful.util.spawn("pactl set-sink-volume 0 -2%", false)  end),
+    awful.key({modkey}, ".",  function ()    awful.util.spawn("emoji", false) end),
     awful.key({}, "XF86AudioRaiseVolume",  function ()    awful.util.spawn("pulsemixer --change-volume +2 --max-volume 100", false) end),
     awful.key({}, "XF86AudioLowerVolume",  function ()    awful.util.spawn("pulsemixer --change-volume -2 --max-volume 100", false) end),
     awful.key({}, "XF86AudioMute",  function ()    awful.util.spawn("amixer -q -D pulse sset Master toggle", false) end),
