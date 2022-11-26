@@ -571,7 +571,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("~/.config/screensetup.sh & sleep 1 && nitrogen --restore")
+awful.spawn.with_shell("~/.config/screensetup.sh & sleep 1 && nitrogen --restore; picom")
 -- }}}
 
 -- Gaps
