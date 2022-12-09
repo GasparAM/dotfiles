@@ -53,6 +53,6 @@ colorscript -r
 #Rust stuff
 #. "$HOME/.cargo/env"
 
-export PATH=$PATH:/home/$(whoami)/.spicetify
-alias gitdot='/usr/bin/git --git-dir=/home/$(whoami)/dotfiles/ --work-tree=/home/$(whoami)'
+export PATH=$PATH:/home/${USER}/.spicetify
+alias gitdot='/usr/bin/git --git-dir=/home/${USER}/dotfiles/ --work-tree=/home/${USER}'
 #alias vim=nvim
