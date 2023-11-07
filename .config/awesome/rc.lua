@@ -1,7 +1,9 @@
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
+local battery_widget = require("battery-widget")
 
+-- Instanciate and add widget to the wibox:
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -218,6 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+	    battery_widget{},
             s.mylayoutbox,
         },
     }
@@ -337,7 +340,11 @@ clientkeys = gears.table.join(
     awful.key({}, "XF86AudioNext",  function ()    awful.util.spawn("playerctl next", false) end),
     awful.key({}, "XF86AudioPrev",  function ()    awful.util.spawn("playerctl previous", false) end),
     awful.key({}, "Print",  function ()    awful.util.spawn("flameshot gui", false) end), 
-
+    awful.key({}, "XF86MonBrightnessDown",  function ()    awful.util.spawn("brightnessctl set 2%-", false) end), 
+    awful.key({}, "XF86MonBrightnessUp",  function ()    awful.util.spawn("brightnessctl set 2%+", false) end), 
+    awful.key({modkey, "Control", "Shift" }, "h",  function ()    awful.util.spawn("powerprofilesctl set performance", false) end), 
+    awful.key({modkey, "Control", "Shift" }, "m",  function ()    awful.util.spawn("powerprofilesctl set balanced", false) end), 
+    awful.key({modkey, "Control", "Shift" }, "l",  function ()    awful.util.spawn("powerprofilesctl set power-saver", false) end), 
     awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
@@ -571,11 +578,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("nvidia-settings -l & sleep 1 && nitrogen --restore; picom")
+awful.spawn.with_shell("nvidia-settings -l & sleep 1 && nitrogen --restore; picom --experimental-backends")
 -- }}}
 
 -- Gaps
-beautiful.useless_gap = 6
+beautiful.useless_gap = 8
 beautiful.gap_single_client = true
 -- }}
 
