@@ -5,9 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
-
 #Fix left-right arrows
 #bindkey "\e[1;5D" backward-word
 #bindkey "\e[1;5C" forward-word
@@ -15,6 +12,8 @@ PS1='[\u@\h \W]\$ '
 #exports
 export XDG_CONFIG_HOME="$HOME/.config/"
 #export TERM='xterm-256color'
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+export EDITOR=nvim
 
 #archive extraction tool
 ex ()
@@ -65,37 +64,21 @@ export PATH=$PATH:/home/${USER}/.spicetify
 alias gitdot='/usr/bin/git --git-dir=/home/${USER}/dotfiles/ --work-tree=/home/${USER}'
 #alias vim=nvim
 
-
-NEWLINE_BEFORE_PROMPT=yes
-
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		echo "${BRANCH}${STAT}"
+	else
+		echo ""
+	fi
 }
 
-red="\[\e[1;31m\]"
-green="\[\e[1;32m\]"
-yellow="\[\e[1;33m\]"
-blue="\[\e[1;34m\]"
-magenta="\[\e[1;35m\]"
-cyan="\[\e[1;36m\]"
-header="\[\e[1;95m\]"
-reset="\[\e[0m\]"
-prompt_color="\[\e[1;32m\]"
-info_color="\[\e[1;34m\]"
-prompt_symbol=👽
+export PS1="\[$(tput bold)\]\[$(tput setaf 4)\][\[$(tput setaf 2)\]\`parse_git_branch\`🦧\[$(tput setaf 5)\]\W\[$(tput setaf 4)\]]\\$ \[$(tput sgr0)\]"
 
-if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
-    prompt_color="\[\e[1;94m\]"
-    info_color="\[\e[1;31m\]"
-    prompt_symbol=☠️
-fi
+export PATH=$PATH:/home/gavetisyan/.spicetify
 
-PS1="${prompt_color}┌─${VIRTUAL_ENV:+(${reset}$(basename $VIRTUAL_ENV)${prompt_color})}─"
-PS1+="[${header}\D{%Y-%m-%d %H:%M:%S}${prompt_color}]─"
-PS1+="{${info_color}\u${prompt_symbol}\h${prompt_color}}─"
-PS1+="(${yellow}\$? \$([[ \$? == 0 ]] && echo \"${green}\342\234\223\" || echo \"${red}\342\234\227\")${prompt_color})─"
-PS1+="(${red}\w "
-PS1+="${yellow}\$(ls -1 | wc -l | sed 's: ::g') ${green}files${prompt_color}, ${yellow}\$(ls -sh | head -n1 | sed 's/total //')${prompt_color})\n"
-PS1+="└─${cyan}\$(parse_git_branch)${prompt_color}─"
-PS1+="${info_color}\$${reset} "
-[ "$NEWLINE_BEFORE_PROMPT" = yes ] && PROMPT_COMMAND="PROMPT_COMMAND=echo"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+alias gpu="git push -u origin $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
