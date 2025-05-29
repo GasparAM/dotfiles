@@ -7,7 +7,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set number")
 vim.cmd("set tgc")
 vim.cmd("set cul")
-vim.cmd("colorscheme lunaperche")
+vim.cmd("colorscheme tokyonight-night")
  
 -- Telescope + mappings
 -- local builtin = require('telescope.builtin')
