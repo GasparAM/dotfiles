@@ -1,0 +1,223 @@
+* {
+    border: none;
+    border-radius: 0px;
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-size: 14px;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: linear-gradient(#3E91ED, #225DDD, #225DDB, #2252D8, #1844A7);
+    border-top: 2px solid #224F90;
+    border-bottom: 2px solid #224F90;
+    color: #f4d9e1
+}
+
+#workspaces {
+}
+
+#workspaces button {
+    background: linear-gradient(to bottom right, #80B1FF, #3373F1, #3373F1, #3373F1, #3373F1);
+    margin: 3px 0px 3px 3px;
+    padding: 0px 70px 0px 3px;
+    border-radius: 4px;
+    border: outset 2px #0D40A5;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#workspaces button.active {
+    background: #1A50B8;
+    border: groove 2px #123D94;
+    color: #f7f7f7;
+}
+
+#workspaces button:hover {
+    background: #2B65D6;
+    border: groove 1px #3966BD;
+}
+
+#custom-date,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#custom-randwall,
+#tray,
+#custom-launcher {
+   /* background: transparent;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px; */
+    color: #F7F7F7;
+    text-shadow: 2px 1px 1px #000000;
+    background: linear-gradient(#15ACF5, #0E91EC, #16ADF6);
+    border-top: 2px solid #224F90;
+    border-bottom: 2px solid #224F90;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#tray {
+    border-left: 2px inset #2DBDF2;
+    padding-left: 5px;
+}
+
+#custom-date {
+    color: #D3869B;
+}
+
+#custom-power {
+    color: #24283b;
+    background-color: #db4b4b;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    padding: 5px 10px;
+}
+
+#clock {
+    /*border-radius: 0px 0px 0px 24px;*/
+    padding-right: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    /*border-left: solid 1px #282738;*/
+}
+
+
+#battery {
+}
+
+#battery.charging {
+    color: #9ece6a;
+    background-color: #282828;
+    /*color: #FABD2D;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+}
+
+#network {
+}
+
+#pulseaudio {
+    padding-left: 5px;
+    margin-left: 0px;
+}
+
+#pulseaudio.muted {
+    background: transparent;
+    color: #928374;
+    margin-left: 0px;
+}
+
+#custom-randwall {
+    color: #f4d9e1;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+
+#custom-launcher {
+    color: #FFFAEF;
+    background: linear-gradient(#92C18D, #48954F, #4BAA44, #4AAA48, #3F9942);
+    border-radius: 0px 10px 15px 0px;
+    border-right: 2px outset #206522;
+    margin: 0px 5px 0px 0px;
+    padding: 0 20px 0 13px;
+    /*border-right: solid 1px #282738;*/
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bold;
+    border-top: 2px solid #296728;
+    border-bottom: 2px solid #296728;
+}
+
+#custom-launcher button:hover {
+    background-color: #FB4934;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+
+#custom-playerctl {
+    background: transparent;
+    padding-left: 15px;
+    padding-right: 14px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#window {
+    background: #282828;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#custom-wf-recorder {
+    padding: 0 20px;
+    color: #e5809e;
+    background-color: #1E1E2E;
+}
+
+#custom-hyprpicker {
+    background-color: #282828;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 11px 0px 9px;
+    font-weight: bold;
+}
