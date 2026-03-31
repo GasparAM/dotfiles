@@ -1,0 +1,15 @@
+allow_images=true
+allow_markup=true
+insensitive=true
+hide_scroll=true
+location=7
+x=-30
+y=-45
+no_actions=true
+width=470
+height=570
+always_parse_args=true
+prompt=Search...
+term=kitty
+stylesheet=xp.css
+use_search_box=false

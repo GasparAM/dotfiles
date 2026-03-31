@@ -1,0 +1,70 @@
+#window {
+    background-color: transparent;
+    filter: blur(5px);
+
+    border-radius: 15px;
+    font-family: Iosevka Nerd Font;
+    animation: fadeIn;
+    animation-duration: 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#outer-box {
+    margin: 30px;
+    border-radius: 16px 16px 0px 0px;
+    background-image: url("/home/gavetisyan/.config/wofi/winxpsrch.png");
+    background-size: contain;
+    background-position: center center;
+    border: 1px rgba(49, 50, 68, 0.9) solid;
+  
+  padding-bottom: 15px;
+}
+
+#inner-box {
+    color: #d8dee9;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+#input {
+    color: #000000;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    margin: 83px 125px 0px 40px;
+    font-size: 16px;
+}
+
+#entry {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 3px 0px 3px;
+}
+
+
+#entry:selected {
+    background-color: rgba(211, 229, 250, 1);
+}
+     
+#text:selected {
+    color: #000000;
+    font-weight: bold;
+}
+
+#text {
+    font: 16px Tahoma;
+    padding: 7px;
+    color: #000000;
+} 
+
+#img {
+    padding: 4px;
+}
+
+#scroll {
+    margin-bottom: 50px;
+}

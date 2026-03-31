@@ -87,7 +87,7 @@
     "format": "{icon}   {capacity}%",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
-    "format-alt": "{icon} {time}",
+    "format-alt": "{icon}   {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
@@ -147,8 +147,8 @@
   "custom/launcher": {
     "format": "󰈸 start",
     //"on-click": "bash $HOME/.config/rofi/launcher.sh",
-    "on-click": "wofi --show drun -l 7 -I -a -n -W 500 -H 376", // -s ~/.config/wofi/themes/gruvbox.css",
+    "on-click": "wofi --show drun -c /home/gavetisyan/.config/wofi/xp", // -s ~/.config/wofi/themes/gruvbox.css",
     //"on-click-right": "bash $HOME/.config/rofi/run.sh"  
-    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376" // -s ~/.config/wofi/themes/gruvbox.css"  
+    //"on-click-right": "wofi --show run -I -a -n -W 500 -H 376" // -s ~/.config/wofi/themes/gruvbox.css"  
   }
 }
